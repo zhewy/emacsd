@@ -25,3 +25,6 @@
 (global-set-key (kbd "<f8>")  'org-id-get-create)
 
 (setq org-id-link-to-org-use-id t)
+
+(setenv "PATH" (concat (getenv "PATH") ":/psql/bin"))
+    (setq exec-path (append exec-path '("C:/working/bin/pgsql/bin")))
