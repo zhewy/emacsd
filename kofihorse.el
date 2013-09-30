@@ -28,3 +28,15 @@
 
 (setenv "PATH" (concat (getenv "PATH") ":/psql/bin"))
     (setq exec-path (append exec-path '("C:/working/bin/pgsql/bin")))
+(setenv "PATH" (concat (getenv "PATH") ":/sqlite/bin"))
+    (setq exec-path (append exec-path '("C:/working/bin/sqlite")))
+(setenv "PATH" (concat (getenv "PATH") ":/python/bin"))
+    (setq exec-path (append exec-path '("C:/working/bin/pypy3")))
+
+(setq python-python-command "C:/working/bin/pypy3/pypy.exe")
+(setq org-babel-python-command "C:/working/bin/pypy3/pypy.exe")
+
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((python . t)))
+
