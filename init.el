@@ -16,7 +16,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(bmkp-last-as-first-bookmark-file "~\\.emacs.d\\bookmarks")
  '(indent-tabs-mode nil)
  '(org-agenda-files (quote ("c:/Users/Zhuhui/Dropbox/org/personal.org")))
  '(org-special-ctrl-a/e t)
