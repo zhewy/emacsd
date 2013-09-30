@@ -28,3 +28,7 @@
 (global-set-key (kbd "C-c <right>") 'windmove-right)
 (global-set-key (kbd "C-c <up>")    'windmove-up)
 (global-set-key (kbd "C-c <down>")  'windmove-down)
+
+(global-set-key (kbd "<f12>")  'org-indent-mode)
+(global-set-key (kbd "<f11>")  'visual-line-mode)
+(global-set-key (kbd "<f8>")  'org-id-get-create)
