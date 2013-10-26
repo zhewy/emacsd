@@ -1,7 +1,7 @@
-bookmarks
-
 *~
 
-elpa/
+bookmarks
+*.dat
 
+elpa/
 url/
