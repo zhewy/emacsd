@@ -1,7 +1,14 @@
+bookmarks
+
 *~
 
-bookmarks
-*.dat
-
 elpa/
+
 url/
+
+*.dat
+eshell/
+
+\#*
+
+.org-id-locations

@@ -5,10 +5,19 @@
 
 ;; requires elpa packages: bookmarks+ dired+ org-plus-contrib framemove dired-details
 
+
+
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (require 'package)
 (setq package-archives '(("gnu" . "http://elpa.gnu.org/packages/")
-                         ("marmalade" . "http://marmalade-repo.org/packages/")
-                         ("melpa" . "http://melpa.milkbox.net/packages/")))
+;;                         ("marmalade" . "http://marmalade-repo.org/packages/")
+                         ("melpa" . "http://melpa.org/packages/")))
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 (custom-set-variables
@@ -49,3 +58,34 @@
 
 ; system specific file load
 (if (file-exists-p system-specific-config) (load system-specific-config))
+
+(require 'popup)
+(require 'yasnippet)
+(setq yas-snippet-dirs
+      '("C:/Users/zhewy/Dropbox/0org/snippets"  ;; personal snippets
+        ))
+(yas-global-mode 1)
+
+;; add some shotcuts in popup menu mode
+(define-key popup-menu-keymap (kbd "M-n") 'popup-next)
+(define-key popup-menu-keymap (kbd "TAB") 'popup-next)
+(define-key popup-menu-keymap (kbd "<tab>") 'popup-next)
+(define-key popup-menu-keymap (kbd "<backtab>") 'popup-previous)
+(define-key popup-menu-keymap (kbd "M-p") 'popup-previous)
+
+(defun yas/popup-isearch-prompt (prompt choices &optional display-fn)
+  (when (featurep 'popup)
+    (popup-menu*
+     (mapcar
+      (lambda (choice)
+        (popup-make-item
+         (or (and display-fn (funcall display-fn choice))
+             choice)
+         :value choice))
+      choices)
+     :prompt prompt
+     ;; start isearch mode immediately
+     :isearch t
+     )))
+
+(setq yas/prompt-functions '(yas/popup-isearch-prompt yas/no-prompt))
